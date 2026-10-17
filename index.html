@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172b4d">
+  <meta name="description" content="Learn practical computer skills, spoken English and school subjects at Balaji Computer Classes, Siwar Mod. Find a course that fits your goals.">
+  <title>Balaji Computer Classes | Learn Skills. Build Your Future.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #172b4d;
+      --navy-deep: #10213e;
+      --blue: #315ee8;
+      --blue-soft: #edf2ff;
+      --yellow: #ffd24a;
+      --ink: #1e293b;
+      --muted: #68758a;
+      --paper: #fffefa;
+      --line: #e8eaf0;
+      --white: #fff;
+      --radius: 20px;
+      --shadow: 0 18px 55px rgba(23, 43, 77, .09);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--blue);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 22px; height: 2px; background: var(--yellow); content: ""; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: "Manrope", sans-serif; }
+    h2 { margin-bottom: 14px; color: var(--navy); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; letter-spacing: -.045em; }
+    .section-lead { max-width: 570px; margin-bottom: 0; color: var(--muted); font-size: 1.04rem; }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid rgba(232, 234, 240, .8);
+      background: rgba(255, 254, 250, .94);
+      backdrop-filter: blur(14px);
+    }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; flex-shrink: 0; }
+    .brand-mark {
+      display: grid;
+      width: 43px;
+      height: 43px;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--navy);
+      background: var(--yellow);
+      font-family: "Manrope", sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -.07em;
+    }
+    .brand-name { display: grid; color: var(--navy); font-family: "Manrope", sans-serif; font-size: .94rem; font-weight: 800; line-height: 1.15; }
+    .brand-name small { margin-top: 4px; color: var(--muted); font-family: "DM Sans", sans-serif; font-size: .68rem; font-weight: 500; letter-spacing: .05em; }
+    .nav-links { display: flex; align-items: center; gap: 31px; margin: 0; padding: 0; list-style: none; }
+    .nav-links a { color: #475569; font-size: .9rem; font-weight: 600; transition: color .2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 21px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--blue);
+      color: var(--white);
+      font-weight: 700;
+      transition: transform .2s, background .2s, box-shadow .2s;
+    }
+    .button:hover { transform: translateY(-2px); background: #234ed0; box-shadow: 0 9px 22px rgba(49, 94, 232, .22); }
+    .button-light { background: var(--white); color: var(--navy); }
+    .button-light:hover { background: #f3f5fa; }
+    .button-arrow { font-size: 1.15rem; line-height: 1; }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--white);
+      color: var(--navy);
+      cursor: pointer;
+    }
+
+    .hero { position: relative; overflow: hidden; padding: 75px 0 80px; }
+    .hero::before {
+      position: absolute;
+      z-index: -1;
+      top: -210px;
+      right: -160px;
+      width: 630px;
+      height: 630px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff4cf 0%, rgba(255, 244, 207, .38) 54%, transparent 72%);
+      content: "";
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 42px; }
+    .hero h1 { max-width: 620px; margin: 19px 0 20px; color: var(--navy); font-size: clamp(2.85rem, 5.9vw, 5rem); font-weight: 800; line-height: 1.06; letter-spacing: -.065em; }
+    .hero h1 span { position: relative; z-index: 0; white-space: nowrap; }
+    .hero h1 span::after { position: absolute; z-index: -1; right: -2px; bottom: 2px; left: -2px; height: 14px; background: var(--yellow); content: ""; opacity: .8; }
+    .hero-copy { max-width: 490px; margin-bottom: 27px; color: var(--muted); font-size: 1.08rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button-outline { border: 1px solid #d9dfeb; background: transparent; color: var(--navy); }
+    .button-outline:hover { background: var(--white); }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 27px; color: var(--muted); font-size: .88rem; }
+    .pin { display: grid; width: 30px; height: 30px; flex: 0 0 30px; place-items: center; border-radius: 50%; background: #fff3cf; color: #916a00; }
+
+    .hero-art { position: relative; min-height: 440px; display: grid; place-items: center; }
+    .art-halo { position: absolute; width: min(420px, 90%); aspect-ratio: 1; border-radius: 50%; background: #f0f3ff; }
+    .art-window { position: relative; width: min(430px, 100%); padding: 13px; border: 1px solid rgba(23, 43, 77, .08); border-radius: 22px; background: rgba(255, 255, 255, .86); box-shadow: 0 28px 70px rgba(30, 47, 86, .14); transform: rotate(-2deg); }
+    .window-top { display: flex; align-items: center; gap: 5px; padding: 3px 4px 12px; }
+    .window-top i { width: 8px; height: 8px; border-radius: 50%; background: #f6a7a4; }
+    .window-top i:nth-child(2) { background: #ffd274; }
+    .window-top i:nth-child(3) { background: #9dd9b3; }
+    .window-top span { margin-left: auto; color: #9ba5b5; font-size: .62rem; }
+    .learning-card { overflow: hidden; border-radius: 14px; background: var(--navy); }
+    .learning-top { display: flex; justify-content: space-between; padding: 22px 23px 7px; color: #c5d0e8; font-size: .72rem; }
+    .learning-top strong { color: var(--yellow); font-weight: 700; }
+    .learning-card h3 { margin: 0; padding: 0 23px; color: var(--white); font-size: 1.5rem; letter-spacing: -.04em; }
+    .code-illustration { padding: 17px 22px 20px; color: #c6d6ff; font-family: Consolas, monospace; font-size: .9rem; line-height: 1.9; }
+    .code-illustration .code-green { color: #9ee7b7; }
+    .code-illustration .code-yellow { color: var(--yellow); }
+    .learning-bottom { display: flex; align-items: center; gap: 13px; padding: 15px 21px; background: #20375f; color: var(--white); }
+    .avatar-stack { display: flex; padding-left: 2px; }
+    .avatar-stack span { display: grid; width: 28px; height: 28px; margin-left: -3px; place-items: center; border: 2px solid #20375f; border-radius: 50%; background: #ffe2be; color: #674b32; font-size: .58rem; font-weight: 700; }
+    .avatar-stack span:nth-child(2) { background: #bce5d0; }
+    .avatar-stack span:nth-child(3) { background: #d5d0ff; }
+    .learning-bottom p { margin: 0; color: #e6ebf7; font-size: .7rem; }
+    .float-card { position: absolute; z-index: 1; display: flex; align-items: center; gap: 10px; padding: 12px 15px; border: 1px solid #edf0f5; border-radius: 13px; background: var(--white); box-shadow: var(--shadow); color: var(--navy); font-size: .79rem; font-weight: 700; }
+    .float-card .float-icon { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 10px; background: #fff4ce; font-size: 1.05rem; }
+    .float-one { top: 69px; right: -6px; transform: rotate(3deg); }
+    .float-two { bottom: 65px; left: -13px; transform: rotate(-3deg); }
+
+    .quick-facts { padding: 0 0 66px; }
+    .facts-row { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 15px; background: var(--white); }
+    .fact { display: flex; align-items: center; gap: 13px; padding: 20px 25px; }
+    .fact + .fact { border-left: 1px solid var(--line); }
+    .fact-icon { display: grid; width: 41px; height: 41px; flex: 0 0 41px; place-items: center; border-radius: 12px; background: var(--blue-soft); color: var(--blue); font-size: 1.13rem; }
+    .fact strong { display: block; color: var(--navy); font-size: .92rem; }
+    .fact small { display: block; color: var(--muted); font-size: .76rem; }
+
+    .section { padding: 83px 0; }
+    .courses-section { background: #f7f8fc; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 34px; }
+    .section-heading .section-lead { max-width: 390px; }
+    .course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    .course-card { min-height: 205px; padding: 23px; border: 1px solid var(--line); border-radius: 16px; background: var(--white); transition: transform .2s, box-shadow .2s, border-color .2s; }
+    .course-card:hover { transform: translateY(-4px); border-color: #d8e0fa; box-shadow: var(--shadow); }
+    .course-icon { display: grid; width: 46px; height: 46px; margin-bottom: 20px; place-items: center; border-radius: 13px; background: var(--blue-soft); font-size: 1.33rem; }
+    .course-card:nth-child(2) .course-icon, .course-card:nth-child(5) .course-icon { background: #fff4d8; }
+    .course-card:nth-child(3) .course-icon, .course-card:nth-child(6) .course-icon { background: #e7f7ef; }
+    .course-card h3 { margin-bottom: 7px; color: var(--navy); font-size: 1.04rem; letter-spacing: -.02em; }
+    .course-card p { margin: 0; color: var(--muted); font-size: .86rem; }
+
+    .about-grid { display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: 75px; }
+    .about-visual { position: relative; min-height: 380px; display: grid; place-items: center; border-radius: 24px; background: #eef2ff; }
+    .about-board { position: relative; width: 76%; padding: 27px; border-radius: 16px; background: var(--navy); box-shadow: 0 24px 50px rgba(23, 43, 77, .18); }
+    .board-label { color: #b9c6df; font-size: .73rem; letter-spacing: .1em; text-transform: uppercase; }
+    .about-board h3 { margin: 11px 0 18px; color: var(--white); font-size: 1.65rem; line-height: 1.25; }
+    .board-rule { width: 74%; height: 5px; margin: 11px 0; border-radius: 8px; background: #496087; }
+    .board-rule:nth-last-child(2) { width: 52%; background: var(--yellow); }
+    .about-sticker { position: absolute; right: 8%; bottom: 9%; display: grid; width: 77px; height: 77px; place-items: center; border: 6px solid var(--paper); border-radius: 50%; background: var(--yellow); color: var(--navy); font-family: "Manrope", sans-serif; font-size: .82rem; font-weight: 800; line-height: 1.15; text-align: center; transform: rotate(9deg); }
+    .about-copy h2 { margin-top: 14px; }
+    .about-copy > p { margin-bottom: 24px; color: var(--muted); }
+    .benefit-list { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+    .benefit-list li { display: flex; align-items: flex-start; gap: 12px; color: #39465a; font-size: .94rem; }
+    .check { display: grid; width: 23px; height: 23px; flex: 0 0 23px; place-items: center; border-radius: 50%; background: #e8f7ed; color: #278249; font-size: .76rem; font-weight: 800; }
+
+    .cta-band { padding: 0 0 84px; }
+    .cta-inner { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 43px 48px; border-radius: 20px; background: var(--navy); }
+    .cta-inner::after { position: absolute; top: -105px; right: 21%; width: 250px; height: 250px; border: 1px solid rgba(255, 255, 255, .09); border-radius: 50%; box-shadow: 0 0 0 32px rgba(255,255,255,.025), 0 0 0 66px rgba(255,255,255,.025); content: ""; }
+    .cta-copy { position: relative; z-index: 1; }
+    .cta-copy .eyebrow { color: var(--yellow); }
+    .cta-copy h2 { max-width: 620px; margin: 9px 0 8px; color: var(--white); font-size: clamp(1.7rem, 3.6vw, 2.5rem); }
+    .cta-copy p { margin: 0; color: #c0cbe0; }
+    .cta-inner .button { position: relative; z-index: 1; flex-shrink: 0; background: var(--yellow); color: var(--navy); }
+    .cta-inner .button:hover { background: #ffdf79; }
+
+    .contact-section { padding: 80px 0; background: #f7f8fc; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: stretch; margin-top: 34px; }
+    .contact-card { padding: 28px; border: 1px solid var(--line); border-radius: 17px; background: var(--white); }
+    .contact-card h3 { margin-bottom: 9px; color: var(--navy); font-size: 1.15rem; }
+    .contact-card > p { margin-bottom: 22px; color: var(--muted); font-size: .92rem; }
+    .address-row { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 21px; }
+    .address-row .fact-icon { background: #fff4d8; color: #986b00; }
+    .address-row strong { display: block; color: var(--navy); font-size: .93rem; }
+    .address-row span { color: var(--muted); font-size: .88rem; }
+    .map-card { position: relative; min-height: 260px; overflow: hidden; display: flex; align-items: end; padding: 23px; border-radius: 17px; background: linear-gradient(135deg, #dfe8f6, #e8f4e9); }
+    .map-pattern { position: absolute; inset: 0; opacity: .6; background-image: linear-gradient(28deg, transparent 47%, #fff 48%, #fff 50%, transparent 51%), linear-gradient(115deg, transparent 46%, #fff 47%, #fff 49%, transparent 50%), linear-gradient(90deg, transparent 49%, #cad8e8 49.4%, #cad8e8 50%, transparent 50.4%); background-size: 120px 100px, 160px 150px, 100% 100%; }
+    .map-marker { position: absolute; top: 39%; left: 50%; display: grid; width: 54px; height: 54px; place-items: center; border: 5px solid rgba(255,255,255,.8); border-radius: 50% 50% 50% 4px; background: var(--blue); color: white; font-size: 1.3rem; box-shadow: 0 8px 22px rgba(49,94,232,.3); transform: translate(-50%, -50%) rotate(-45deg); }
+    .map-marker span { transform: rotate(45deg); }
+    .map-label { position: relative; z-index: 1; display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 15px; padding: 15px; border: 1px solid rgba(255,255,255,.9); border-radius: 12px; background: rgba(255,255,255,.93); }
+    .map-label strong { display: block; color: var(--navy); font-size: .88rem; }
+    .map-label small { display: block; color: var(--muted); font-size: .77rem; }
+    .map-label .button { min-height: 40px; padding-inline: 14px; font-size: .82rem; white-space: nowrap; }
+    .site-footer { padding: 26px 0; background: var(--navy-deep); color: #c8d2e5; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-row .brand-name { color: var(--white); }
+    .footer-row .brand-name small { color: #abb8d0; }
+    .footer-row p { margin: 0; font-size: .79rem; }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 19px; }
+      .nav-cta { display: none; }
+      .hero-grid { gap: 18px; }
+      .hero-art { min-height: 380px; }
+      .float-one { right: -3px; }
+      .float-two { left: -4px; }
+      .about-grid { gap: 42px; }
+      .fact { padding-inline: 16px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(100% - 36px, 540px); }
+      .nav { min-height: 70px; }
+      .menu-toggle { display: grid; }
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 18px 17px;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+      }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links li a { display: block; padding: 11px 4px; }
+      .hero { padding: 52px 0 48px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero h1 { max-width: 540px; font-size: clamp(2.65rem, 11vw, 4rem); }
+      .hero-copy { font-size: 1rem; }
+      .hero-art { min-height: 365px; margin-top: 5px; }
+      .art-window { width: min(390px, 91%); }
+      .float-one { top: 40px; right: 0; }
+      .float-two { bottom: 37px; left: 0; }
+      .quick-facts { padding-bottom: 46px; }
+      .facts-row { grid-template-columns: 1fr; }
+      .fact { padding: 14px 19px; }
+      .fact + .fact { border-top: 1px solid var(--line); border-left: 0; }
+      .section { padding: 64px 0; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 10px; margin-bottom: 25px; }
+      .course-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .course-card { min-height: 205px; padding: 18px; }
+      .course-icon { margin-bottom: 15px; }
+      .about-grid { grid-template-columns: 1fr; gap: 33px; }
+      .about-visual { min-height: 310px; }
+      .about-board { width: min(76%, 340px); }
+      .cta-band { padding-bottom: 64px; }
+      .cta-inner { align-items: flex-start; flex-direction: column; padding: 32px 25px; }
+      .contact-section { padding: 64px 0; }
+      .contact-grid { grid-template-columns: 1fr; gap: 15px; margin-top: 24px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 420px) {
+      .container { width: calc(100% - 30px); }
+      .course-grid { grid-template-columns: 1fr; }
+      .course-card { min-height: 0; }
+      .course-icon { margin-bottom: 12px; }
+      .hero-actions .button { flex: 1; padding-inline: 13px; font-size: .9rem; }
+      .map-label { align-items: flex-start; flex-direction: column; }
+      .map-label .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Balaji Computer Classes home">
+        <span class="brand-mark" aria-hidden="true">BC</span>
+        <span class="brand-name">Balaji Computer Classes<small>LEARN · PRACTISE · GROW</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#courses">Our courses</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#contact">Find us</a></li>
+      </ul>
+      <a class="button nav-cta" href="#contact">Visit our centre <span class="button-arrow" aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid container">
+        <div>
+          <span class="eyebrow">Your learning starts here</span>
+          <h1>Learn skills.<br>Build your <span>future.</span></h1>
+          <p class="hero-copy">From computer courses to school subjects, get the guidance and practical learning you need—all close to home in Siwar Mod.</p>
+          <div class="hero-actions">
+            <a class="button" href="#courses">Explore our courses <span class="button-arrow" aria-hidden="true">→</span></a>
+            <a class="button button-outline" href="#contact">Visit us</a>
+          </div>
+          <div class="hero-note"><span class="pin" aria-hidden="true">⌖</span><span>Local coaching for learners in <strong>Siwar Mod</strong></span></div>
+        </div>
+
+        <div class="hero-art" aria-label="Illustration of a computer skills lesson">
+          <div class="art-halo"></div>
+          <div class="float-card float-one"><span class="float-icon" aria-hidden="true">⌨</span><span>Learn by doing</span></div>
+          <div class="art-window">
+            <div class="window-top"><i></i><i></i><i></i><span>YOUR NEXT CHAPTER</span></div>
+            <div class="learning-card">
+              <div class="learning-top"><span>SKILL BUILDING</span><strong>01 / 06</strong></div>
+              <h3>Make your ideas<br>work on screen.</h3>
+              <div class="code-illustration"><div><span class="code-yellow">&lt;html&gt;</span></div><div>&nbsp;&nbsp;<span class="code-green">&lt;learn&gt;</span>somethingNew<span class="code-green">&lt;/learn&gt;</span></div><div><span class="code-yellow">&lt;/html&gt;</span></div></div>
+              <div class="learning-bottom">
+                <div class="avatar-stack" aria-hidden="true"><span>A</span><span>R</span><span>S</span></div>
+                <p>One new skill can open<br>up a world of possibilities.</p>
+              </div>
+            </div>
+          </div>
+          <div class="float-card float-two"><span class="float-icon" aria-hidden="true">✦</span><span>Start where you are</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-facts container" aria-label="What we teach">
+      <div class="facts-row">
+        <div class="fact"><span class="fact-icon" aria-hidden="true">⌘</span><div><strong>Computer skills</strong><small>Practical, career-ready learning</small></div></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true">Aa</span><div><strong>English &amp; communication</strong><small>Build confidence as you learn</small></div></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true">✎</span><div><strong>School tuition</strong><small>Support for classes 1–10</small></div></div>
+      </div>
+    </section>
+
+    <section class="section courses-section" id="courses">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow">Find your next step</span><h2 style="margin-top: 13px;">Courses for your goals</h2></div>
+          <p class="section-lead">Choose a skill to grow, a subject to strengthen, or a new direction to explore.</p>
+        </div>
+        <div class="course-grid">
+          <article class="course-card"><span class="course-icon" aria-hidden="true">💻</span><h3>Web Designing</h3><p>Learn the foundations of building websites and bringing ideas to life online.</p></article>
+          <article class="course-card"><span class="course-icon" aria-hidden="true">🗣️</span><h3>Spoken English</h3><p>Practise speaking, grow your vocabulary and communicate with confidence.</p></article>
+          <article class="course-card"><span class="course-icon" aria-hidden="true">📊</span><h3>RS-CIT</h3><p>Build useful computer knowledge and digital skills for everyday life.</p></article>
+          <article class="course-card"><span class="course-icon" aria-hidden="true">🧾</span><h3>Tally</h3><p>Get introduced to accounting software and essential business bookkeeping.</p></article>
+          <article class="course-card"><span class="course-icon" aria-hidden="true">📚</span><h3>Classes 1–10</h3><p>Get guidance with school subjects, homework and foundational learning.</p></article>
+          <article class="course-card"><span class="course-icon" aria-hidden="true">✦</span><h3>Build your skills</h3><p>Not sure where to begin? Visit us and let's find the right course for you.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="about-grid container">
+        <div class="about-visual" aria-hidden="true">
+          <div class="about-board">
+            <span class="board-label">A little progress, every day</span>
+            <h3>Learn something<br>you can use.</h3>
+            <div class="board-rule"></div><div class="board-rule"></div><div class="board-rule"></div>
+          </div>
+          <div class="about-sticker">YOUR<br>NEXT<br>STEP</div>
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">A place to learn and grow</span>
+          <h2>Good learning begins with a clear next step.</h2>
+          <p>Whether you want to improve your computer skills, feel more confident speaking English or get extra help with school, Balaji Computer Classes is here to help you get started.</p>
+          <ul class="benefit-list">
+            <li><span class="check" aria-hidden="true">✓</span><span>Courses for different ages, interests and learning goals</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>Practical computer learning, including Web Designing, RS-CIT and Tally</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>A convenient local learning centre at Siwar Mod</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="cta-inner container">
+        <div class="cta-copy">
+          <span class="eyebrow">Take the first step</span>
+          <h2>Your next skill could start right here.</h2>
+          <p>Come by Balaji Computer Classes in Siwar Mod to ask about courses.</p>
+        </div>
+        <a class="button" href="#contact">Get directions <span class="button-arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <span class="eyebrow">Come say hello</span>
+        <h2 style="margin-top: 13px;">Find us in Siwar Mod</h2>
+        <p class="section-lead">We’d love to help you choose a course. Stop by and talk to us in person.</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Balaji Computer Classes</h3>
+            <p>Your local place to learn computer skills, English and school subjects.</p>
+            <div class="address-row">
+              <span class="fact-icon" aria-hidden="true">⌖</span>
+              <div><strong>Visit our centre</strong><span>Siwar Mod, Rajasthan</span></div>
+            </div>
+            <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Balaji+Computer+Classes+Siwar+Mod+Rajasthan" target="_blank" rel="noopener noreferrer">Open map <span class="button-arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <div class="map-card" aria-label="Map illustration showing the centre in Siwar Mod">
+            <div class="map-pattern"></div>
+            <div class="map-marker" aria-hidden="true"><span>⌖</span></div>
+            <div class="map-label">
+              <div><strong>Balaji Computer Classes</strong><small>Siwar Mod, Rajasthan</small></div>
+              <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Balaji+Computer+Classes+Siwar+Mod+Rajasthan" target="_blank" rel="noopener noreferrer">Directions ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-row container">
+      <a class="brand" href="#home" aria-label="Balaji Computer Classes home">
+        <span class="brand-mark" aria-hidden="true">BC</span>
+        <span class="brand-name">Balaji Computer Classes<small>LEARN · PRACTISE · GROW</small></span>
+      </a>
+      <p>© <span id="year"></span> Balaji Computer Classes · Siwar Mod</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+      navLinks.classList.toggle("is-open", !isOpen);
+    });
+
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        navLinks.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+      }
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
